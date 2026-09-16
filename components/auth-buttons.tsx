@@ -1,6 +1,15 @@
 import { auth, signIn, signOut } from "@/auth";
+import { isDevAuthBypass } from "@/lib/authorization";
 
 export async function AuthButtons() {
+  if (isDevAuthBypass()) {
+    return (
+      <p className="rounded-lg border border-amber-500/40 px-3 py-2 text-sm text-amber-300">
+        Dev bypass active
+      </p>
+    );
+  }
+
   const session = await auth();
 
   if (!session?.user) {
