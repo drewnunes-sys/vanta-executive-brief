@@ -32,11 +32,11 @@ export function GenerateBriefButton({ snapshotId }: { snapshotId: string }) {
       <button
         onClick={generate}
         disabled={loading}
-        className="rounded-lg border border-violet-400 px-4 py-2 text-sm font-semibold text-violet-200 disabled:opacity-50"
+        className="rounded-full border border-vanta-purple px-5 py-2 text-sm font-medium text-vanta-purple hover:bg-vanta-wash disabled:opacity-50"
       >
         {loading ? "Generating…" : "Generate brief"}
       </button>
-      {error && <p className="mt-2 text-sm text-red-400">{error}</p>}
+      {error && <p className="mt-2 text-sm text-vanta-alert">{error}</p>}
     </div>
   );
 }

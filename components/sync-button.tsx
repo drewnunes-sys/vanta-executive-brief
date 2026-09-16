@@ -28,11 +28,11 @@ export function SyncButton() {
       <button
         onClick={sync}
         disabled={loading}
-        className="rounded-lg bg-emerald-400 px-4 py-2 font-semibold text-slate-950 disabled:opacity-50"
+        className="rounded-full bg-vanta-purple px-5 py-2 text-sm font-medium text-white hover:bg-vanta-purple-hover disabled:opacity-50"
       >
         {loading ? "Syncing…" : "Sync Vanta data"}
       </button>
-      {error && <p className="mt-2 text-sm text-red-400">{error}</p>}
+      {error && <p className="mt-2 text-sm text-vanta-alert">{error}</p>}
     </div>
   );
 }

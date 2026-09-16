@@ -4,7 +4,7 @@ import { isDevAuthBypass } from "@/lib/authorization";
 export async function AuthButtons() {
   if (isDevAuthBypass()) {
     return (
-      <p className="rounded-lg border border-amber-500/40 px-3 py-2 text-sm text-amber-300">
+      <p className="rounded-full bg-vanta-wash px-3 py-1.5 text-sm font-medium text-vanta-indigo">
         Dev bypass active
       </p>
     );
@@ -20,7 +20,7 @@ export async function AuthButtons() {
           await signIn("github");
         }}
       >
-        <button className="rounded-lg border border-slate-700 px-4 py-2">
+        <button className="rounded-full bg-vanta-purple px-5 py-2 text-sm font-medium text-white hover:bg-vanta-purple-hover">
           Sign in with GitHub
         </button>
       </form>
@@ -29,14 +29,16 @@ export async function AuthButtons() {
 
   return (
     <div className="flex items-center gap-3">
-      <span className="text-sm text-slate-300">{session.user.email}</span>
+      <span className="hidden text-sm text-vanta-muted md:inline">{session.user.email}</span>
       <form
         action={async () => {
           "use server";
           await signOut();
         }}
       >
-        <button className="rounded-lg border border-slate-700 px-4 py-2">Sign out</button>
+        <button className="rounded-full border border-vanta-border bg-white px-4 py-2 text-sm font-medium text-vanta-ink hover:border-vanta-soft">
+          Sign out
+        </button>
       </form>
     </div>
   );
