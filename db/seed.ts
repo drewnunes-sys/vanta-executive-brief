@@ -1,6 +1,8 @@
-import "dotenv/config";
+import { config } from "dotenv";
 import { db } from "./index";
 import { organizations } from "./schema";
+
+config({ path: ".env.local" });
 
 async function main() {
   await db

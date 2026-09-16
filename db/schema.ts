@@ -54,6 +54,8 @@ export const syncRuns = pgTable("sync_runs", {
   status: syncStatusEnum("status").default("RUNNING").notNull(),
   recordsFetched: integer("records_fetched").default(0).notNull(),
   errorMessage: text("error_message"),
+  initiatedByEmail: text("initiated_by_email"),
+  durationMs: integer("duration_ms"),
   startedAt: timestamp("started_at", { withTimezone: true }).defaultNow().notNull(),
   completedAt: timestamp("completed_at", { withTimezone: true }),
 });
